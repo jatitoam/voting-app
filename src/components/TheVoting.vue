@@ -1,26 +1,25 @@
-<!-- src/components/TheVoting.vue -->
 <template>
   <div>
-    <h1 class="text-xl font-semibold mb-4">Vota por una Propuesta</h1>
-    <p class="mb-6">
+    <h1 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Vota por una Propuesta</h1>
+    <p class="mb-6 text-gray-700 dark:text-gray-300">
       Por favor, vota por tu tema favorito de la clase hasta ahora. Tu voto nos ayudará a mejorar las futuras clases.
     </p>
-    <div v-if="proposals.length === 0">Cargando propuestas...</div>
+    <div v-if="proposals.length === 0" class="text-gray-700 dark:text-gray-300">Cargando propuestas...</div>
     <ul v-else class="space-y-4">
       <li
         v-for="(proposal, index) in proposals"
         :key="index"
-        class="flex items-center justify-between bg-white p-4 rounded shadow"
+        class="flex items-center justify-between bg-white dark:bg-gray-800 p-4 rounded shadow"
       >
         <div class="flex flex-col">
-          <span class="font-medium">{{ proposal.description }}</span>
-          <span class="text-sm text-gray-500 mt-2">
-            Votos: <span class="font-bold text-lg">{{ proposal.voteCount }}</span>
+          <span class="font-medium text-gray-900 dark:text-white">{{ proposal.description }}</span>
+          <span class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+            Votos: <span class="font-bold text-lg text-gray-900 dark:text-white">{{ proposal.voteCount }}</span>
           </span>
         </div>
         <button
           @click="vote(index)"
-          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          class="bg-blue-500 dark:bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-600 dark:hover:bg-blue-800"
         >
           Votar
         </button>
@@ -28,7 +27,6 @@
     </ul>
   </div>
 </template>
-
 <script>
 import { ethers } from "ethers";
 import { contractAddress, contractABI } from "../contract";
