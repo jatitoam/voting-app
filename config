@@ -1,0 +1,17 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[user]
+        name = Tito Alvarez
+        email = augustoalvarez@gmail.com
+        signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKgO/BBy1j+wyovXKAOKFrL0xivUdyo/hL6iUZKMWosS
+[remote "origin"]
+	url = git@github.com:jatitoam/voting-app.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
