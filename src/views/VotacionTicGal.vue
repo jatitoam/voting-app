@@ -100,5 +100,4 @@ export default {
 </script>
 
 <style>
-/* Remueve estilos existentes si los hay */
 </style>

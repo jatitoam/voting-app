@@ -1,24 +1,20 @@
 <template>
   <div id="app" class="min-h-screen">
     <header class="bg-white dark:bg-gray-800 shadow p-4 flex items-center justify-between">
-      <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Mejores clases TIC</h1>
+      <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Laboratorio Criptomonedas TIC</h1>
       <button @click="toggleThemeMode" class="text-gray-900 dark:text-white">
         {{ themeIcon }}
       </button>
     </header>
     <main class="p-4 bg-gray-100 dark:bg-gray-900">
-      <TheVoting />
+      <router-view />
     </main>
   </div>
 </template>
-
 <script>
-import TheVoting from "./components/TheVoting.vue";
-
 export default {
   name: "App",
   components: {
-    TheVoting,
   },
   data() {
     return {

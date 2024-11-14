@@ -19,4 +19,7 @@ module.exports = defineConfig({
       }),
     ],
   },
+  devServer: {
+    historyApiFallback: true, // Add this line to handle client-side routing
+  },
 });
