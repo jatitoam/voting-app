@@ -1,6 +1,5 @@
-<!-- src/App.vue -->
 <template>
-  <div id="app" :class="themeClass" class="min-h-screen">
+  <div id="app" class="min-h-screen">
     <header class="bg-white dark:bg-gray-800 shadow p-4 flex items-center justify-between">
       <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Mejores clases TIC</h1>
       <button @click="toggleThemeMode" class="text-gray-900 dark:text-white">
@@ -15,6 +14,7 @@
 
 <script>
 import TheVoting from "./components/TheVoting.vue";
+
 export default {
   name: "App",
   components: {
@@ -50,24 +50,20 @@ export default {
       } else {
         this.themeMode = 'light';
       }
+      this.updateThemeClass();
+    },
+    updateThemeClass() {
+      document.documentElement.classList.toggle('dark', this.themeClass === 'dark');
     },
   },
   mounted() {
     // Set the initial theme based on system preference
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      this.themeMode = 'system';
-    } else {
-      this.themeMode = 'system';
-    }
+    this.updateThemeClass();
   },
   watch: {
     themeMode() {
-      // Force the class to update
-      document.documentElement.classList.toggle('dark', this.themeClass === 'dark');
+      this.updateThemeClass();
     },
   },
 };
 </script>
-
-<style>
-</style>
